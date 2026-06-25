@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Threshold Fitness — Personal Training in Nairobi</title>
+  <meta name="description" content="Expert personal training in Nairobi. HIIT, kickboxing, strength & conditioning, calisthenics. Book your first session today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #e8772e;
+      --orange-dark: #c45f1a;
+      --black: #0e0e0e;
+      --dark: #161616;
+      --mid: #1f1f1f;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 120px 32px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(14,14,14,0.3) 0%, rgba(14,14,14,0.85) 70%, rgba(14,14,14,1) 100%),
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 40px,
+          rgba(232,119,46,0.04) 40px,
+          rgba(232,119,46,0.04) 41px
+        );
+      z-index: 0;
+    }
+
+    /* Animated accent bar */
+    .hero-accent {
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--orange), transparent);
+      animation: pulse-bar 3s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes pulse-bar {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #aaa;
+      max-width: 480px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 16px 24px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .hero-proof {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .proof-stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .proof-stat span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── WHAT YOU GET ── */
+    .section {
+      padding: 96px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      letter-spacing: 0.03em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 48px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+    }
+
+    .card {
+      background: var(--mid);
+      padding: 36px 28px;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--orange); }
+
+    .card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .card-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── DISCIPLINES ── */
+    .disciplines-section {
+      background: var(--dark);
+      padding: 96px 32px;
+    }
+
+    .disciplines-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .disciplines-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .discipline {
+      background: var(--mid);
+      padding: 32px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: default;
+      transition: background 0.2s;
+    }
+
+    .discipline:hover { background: #252525; }
+
+    .disc-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--border);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .disc-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .disc-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      padding: 96px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .step {
+      padding: 36px 28px 36px 0;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: 0;
+      top: 36px;
+      color: var(--orange);
+      font-size: 1.2rem;
+    }
+
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .step-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      background: var(--dark);
+      padding: 96px 32px;
+    }
+
+    .pricing-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pricing-card {
+      background: var(--mid);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 48px 40px;
+      margin-top: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .pricing-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .pricing-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .bundles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .bundle {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 18px 16px;
+    }
+
+    .bundle-sessions {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .bundle-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .bundle-price {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--orange);
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .pricing-features li {
+      font-size: 0.875rem;
+      color: var(--text);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.75rem;
+      min-width: 14px;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      padding: 96px 32px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: var(--white);
+      line-height: 0.95;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-headline em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* WhatsApp icon SVG inline */
+    .wa-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 100px 20px 48px; }
+      .hero-proof { gap: 24px; }
+      .section { padding: 64px 20px; }
+      .disciplines-section { padding: 64px 20px; }
+      .disciplines-grid { grid-template-columns: 1fr; }
+      .how-section { padding: 64px 20px; }
+      .steps { grid-template-columns: 1fr; }
+      .step:not(:last-child)::after { display: none; }
+      .step { padding: 24px 0; border-bottom: 1px solid var(--border); }
+      .pricing-section { padding: 64px 20px; }
+      .pricing-card { padding: 36px 24px; }
+      .bundles { grid-template-columns: repeat(2, 1fr); }
+      .cta-section { padding: 64px 20px; }
+      footer { padding: 24px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-accent { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">THRESHOLD<span>.</span></a>
+    <a href="https://wa.me/254101070390?text=Hi%20Rama%2C%20I%27d%20like%20to%20book%20a%20training%20session" class="nav-cta" target="_blank" rel="noopener">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Personal Training · Nairobi, Kenya</p>
+      <h1 class="hero-headline">TRAIN<br/>BEYOND YOUR<br/><em>LIMIT.</em></h1>
+      <p class="hero-sub">1-on-1 coaching built around your goals. No gym required. HIIT, kickboxing, strength & calisthenics — with a coach who has 10+ years and 37 clients behind him.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/254101070390?text=Hi%20Rama%2C%20I%27d%20like%20to%20book%20a%20training%20session" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book a Session
+        </a>
+        <a href="#how" class="btn-ghost">See how it works ↓</a>
+      </div>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-stat">
+        <strong>37</strong>
+        <span>Documented clients</span>
+      </div>
+      <div class="proof-stat">
+        <strong>80%</strong>
+        <span>Referral-driven</span>
+      </div>
+      <div class="proof-stat">
+        <strong>10+</strong>
+        <span>Years coaching</span>
+      </div>
+      <div class="proof-stat">
+        <strong>2–3yr</strong>
+        <span>Avg. retention</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section">
+    <p class="section-label">What you get</p>
+    <h2 class="section-title">COACHING, NOT JUST A PLAN.</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <p class="card-title">Your structured program</p>
+        <p class="card-body">A real workout plan built for your body, your goals, and your schedule — not a generic template. Updated as you progress.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <p class="card-title">Trainer who knows you</p>
+        <p class="card-body">Your trainer tracks your sessions, personal records, and mobility notes. They already know exactly where you left off, every time.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <p class="card-title">Train anywhere in Nairobi</p>
+        <p class="card-body">Home, gym, estate compound, or outdoor. You pick the location. Sessions come to you — no commute required.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <p class="card-title">Progress you can see</p>
+        <p class="card-body">Every session logged. Every personal record tracked. Your history builds on the platform so nothing gets lost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINES -->
+  <section class="disciplines-section">
+    <div class="disciplines-inner">
+      <p class="section-label">Disciplines</p>
+      <h2 class="section-title">YOUR GOAL.<br/>YOUR SPECIALTY.</h2>
+      <div class="disciplines-grid">
+        <div class="discipline">
+          <span class="disc-num">01</span>
+          <div>
+            <p class="disc-name">HIIT</p>
+            <p class="disc-desc">High-intensity intervals that burn fat and build conditioning fast</p>
+          </div>
+        </div>
+        <div class="discipline">
+          <span class="disc-num">02</span>
+          <div>
+            <p class="disc-name">Kickboxing</p>
+            <p class="disc-desc">Technical striking, footwork, and full-body power development</p>
+          </div>
+        </div>
+        <div class="discipline">
+          <span class="disc-num">03</span>
+          <div>
+            <p class="disc-name">Strength & Conditioning</p>
+            <p class="disc-desc">Progressive overload built around your available equipment</p>
+          </div>
+        </div>
+        <div class="discipline">
+          <span class="disc-num">04</span>
+          <div>
+            <p class="disc-name">Calisthenics</p>
+            <p class="disc-desc">Bodyweight mastery — muscle-ups, levers, handstands, and beyond</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">THREE STEPS TO YOUR FIRST SESSION.</h2>
+    <div class="steps">
+      <div class="step">
+        <p class="step-num">01</p>
+        <p class="step-title">Message Rama</p>
+        <p class="step-body">Drop a WhatsApp. Tell him your goal, your location, and when you're free. Takes 60 seconds.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">02</p>
+        <p class="step-title">Quick assessment</p>
+        <p class="step-body">Short conversation about your fitness level, history, and goals. No forms, no jargon.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">03</p>
+        <p class="step-title">First session booked</p>
+        <p class="step-body">Pick a time, confirm your bundle, and show up. Your structured plan starts from session one.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-title">SIMPLE. NO SURPRISES.</h2>
+      <div class="pricing-card">
+        <p class="pricing-tag">Tier 1 — Live Coaching</p>
+        <p class="pricing-name">1-ON-1 PERSONAL TRAINING</p>
+        <div class="bundles">
+          <div class="bundle">
+            <p class="bundle-sessions">3</p>
+            <p class="bundle-label">Sessions</p>
+            <p class="bundle-price">KES 7,500</p>
+          </div>
+          <div class="bundle">
+            <p class="bundle-sessions">6</p>
+            <p class="bundle-label">Sessions</p>
+            <p class="bundle-price">KES 15,000</p>
+          </div>
+          <div class="bundle">
+            <p class="bundle-sessions">10</p>
+            <p class="bundle-label">Sessions</p>
+            <p class="bundle-price">KES 25,000</p>
+          </div>
+          <div class="bundle">
+            <p class="bundle-sessions">12</p>
+            <p class="bundle-label">Sessions</p>
+            <p class="bundle-price">KES 30,000</p>
+          </div>
+        </div>
+        <p class="pricing-note">KES 1800 per session · Buy more, train consistently</p>
+        <ul class="pricing-features">
+          <li>Structured workout plan built for you</li>
+          <li>Session notes and progress tracking every time</li>
+          <li>Train at your location — home, gym, or outdoor</li>
+          <li>Personal record tracking across every session</li>
+          <li>Flexible scheduling around your calendar</li>
+        </ul>
+        <a href="https://wa.me/254101070390?text=Hi%20Rama%2C%20I%27d%20like%20to%20start%20with%20a%20session%20bundle" class="btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Started on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <p class="section-label">Ready?</p>
+    <h2 class="cta-headline">YOUR FIRST SESSION<br/>STARTS WITH A<br/><em>MESSAGE.</em></h2>
+    <p class="cta-sub">No sign-up forms. No waiting. Message Rama directly and your first session can be booked today.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/254101070390?text=Hi%20Rama%2C%20I%27d%20like%20to%20book%20a%20training%20session" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">THRESHOLD<span>.</span></p>
+    <p class="footer-text">Redefining Capabilities · Nairobi, Kenya · thresholdfitness.co.ke</p>
+  </footer>
+
+</body>
+</html>
