@@ -9,8 +9,8 @@
   <link rel="canonical" href="https://thresholdfitness.co.ke/" />
   <meta name="author" content="Threshold Fitness" />
   <meta name="theme-color" content="#0d0f0d" />
-  <!-- FAVICON: Threshold_Icon_Only_Transparent.png (from your Logo Pack). Keep it next to index.html. -->
-  <link rel="icon" type="image/png" href="Threshold_Icon_Only_Transparent.png" />
+  <!-- FAVICON: use the uploaded logo asset in the project root. -->
+  <link rel="icon" type="image/png" href="Threshold_AppIcon_Transparent_1024.png" />
   <!-- SOCIAL SHARE PREVIEW (Open Graph + Twitter): shows your logo/banner when the link is shared.
        Update the domain if it changes. -->
   <meta property="og:type" content="website" />
@@ -75,8 +75,8 @@
 
     .nav-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
 
-    /* Logo image — TF_Logo_Horizontal_Dark.png (horizontal, green/gold on transparent, for dark bg) */
-    .nav-logo-img { height: 52px; width: auto; display: block; }
+    /* Full logo, sized for the dark header. */
+    .nav-logo-img { height: 72px; width: auto; display: block; max-width: 420px; }
     /* Text fallback — shows ONLY if the logo image fails to load */
     .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.08em; color: var(--white); white-space: nowrap; }
     .nav-logo-text span { color: var(--green); }
@@ -359,10 +359,9 @@
 
   <!-- ============================= NAV ============================= -->
   <nav>
-    <!-- Current asset in the repo: TF_Transparent_Cutout_v2.png.
-         Replace this with the full horizontal logo file once it is uploaded to the project root. -->
+    <!-- Full uploaded logo for the dark header. -->
     <a href="#" class="nav-logo">
-      <img src="TF_Transparent_Cutout_v2.png" alt="Threshold Fitness Logo" class="nav-logo-img"
+      <img src="Threshold_Logo_Full_Transparent_forLight.png" alt="Threshold Fitness Logo" class="nav-logo-img"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
       <span class="nav-logo-text" style="display:none;">THRESHOLD<span>.</span></span>
     </a>
@@ -533,20 +532,20 @@
   <section class="platform-section" id="platform">
     <span class="platform-badge">Growing soon</span>
     <p class="section-label">What's next for Threshold Fitness</p>
-    <h2 class="section-title">SOON — A WHOLE TEAM<br/>OF <em>REAL COACHES.</em></h2>
-    <p class="platform-lead">Right now, you get me. I’m building a stronger foundation for the future — and that includes the possibility of a wider coach network and a remote offer in due course — but the active service today is still <strong>hands-on personal training in Nairobi</strong>. Remote coaching is being prepared for clients in Kenya, East Africa, and internationally, but it is not available to book yet.</p>
+    <h2 class="section-title">BUILDING FOR THE <em>FUTURE.</em></h2>
+    <p class="platform-lead">Right now, you get me — the founder, coach, and lead trainer behind Threshold Fitness Nairobi. I’m building a stronger foundation for the future, and that includes the possibility of a wider network and a remote offer in due course, but the active service today is still <strong>hands-on personal training in Nairobi</strong>. Remote coaching is being prepared for clients in Kenya, East Africa, and internationally, but it is not available to book yet.</p>
 
     <div class="specialists">
-      <div class="specialist"><p class="specialist-name">Strength Coaching</p><p class="specialist-desc">Real strength, built on proven programming</p></div>
-      <div class="specialist"><p class="specialist-name">Mobility &amp; Recovery</p><p class="specialist-desc">Move better, feel looser, hurt less</p></div>
-      <div class="specialist"><p class="specialist-name">Kickboxing</p><p class="specialist-desc">Technical striking from the experts</p></div>
-      <div class="specialist"><p class="specialist-name">General Fitness</p><p class="specialist-desc">Consistency, confidence, and lasting progress</p></div>
+      <div class="specialist"><p class="specialist-name">Personal Training</p><p class="specialist-desc">The main live offer today, built around real progress</p></div>
+      <div class="specialist"><p class="specialist-name">Weight Loss Coaching</p><p class="specialist-desc">Sustainable training and habit support</p></div>
+      <div class="specialist"><p class="specialist-name">Kickboxing</p><p class="specialist-desc">Technical striking and conditioning with purpose</p></div>
+      <div class="specialist"><p class="specialist-name">Mobility &amp; Recovery</p><p class="specialist-desc">Move better, feel stronger, and recover smarter</p></div>
       <div class="specialist"><p class="specialist-name">Remote Coaching</p><p class="specialist-desc">Coming soon for Kenya &amp; East Africa</p></div>
-      <div class="specialist"><p class="specialist-name">Future Expansion</p><p class="specialist-desc">Building a wider support network over time</p></div>
+      <div class="specialist"><p class="specialist-name">Long-term Growth</p><p class="specialist-desc">A stronger system, one step at a time</p></div>
     </div>
 
     <div class="platform-now">
-      <p><em>For now, I'm your coach — and honestly, that's the whole point.</em> The future may bring a wider network, but the current promise is a real, personal, hands-on coaching experience that is fully grounded in the present.</p>
+      <p><em>For now, I'm your coach — and honestly, that's the whole point.</em> The future may bring a wider system, but the current promise is a real, personal, hands-on coaching experience that is fully grounded in the present.</p>
     </div>
 
     <!-- EMAIL CAPTURE — wired to the "Threshold Fitness — Launch Updates" Google Form.
