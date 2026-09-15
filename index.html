@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Threshold Fitness — Personal Training in Nairobi | A Plan Built Just For You</title>
   <meta name="description" content="Real 1-on-1 coaching in Nairobi with Rama. Tell me your goal — weight loss, general fitness, kickboxing, or flexibility & mobility — and I build you a personalised plan and coach you through every step — a real, hands-on coach in your corner." />
+<<<<<<< HEAD
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://thresholdfitness.co.ke/" />
   <meta name="author" content="Threshold Fitness" />
   <meta name="theme-color" content="#0d0f0d" />
   <!-- FAVICON: use the uploaded logo asset in the project root. -->
   <link rel="icon" type="image/png" href="Threshold_AppIcon_Transparent_1024.png" />
+=======
+  <!-- FAVICON: Threshold_Icon_Only_Transparent.png (from your Logo Pack). Keep it next to index.html. -->
+>>>>>>> 3f35852178a15b7bc8a170baedd545ea979c75d5
   <!-- SOCIAL SHARE PREVIEW (Open Graph + Twitter): shows your logo/banner when the link is shared.
        Update the domain if it changes. -->
   <meta property="og:type" content="website" />
@@ -18,12 +22,12 @@
   <meta property="og:locale" content="en_KE" />
   <meta property="og:title" content="Threshold Fitness — A Plan Built Just For You" />
   <meta property="og:description" content="Real 1-on-1 coaching in Nairobi. Weight loss, general fitness, kickboxing, flexibility & mobility — a personalised plan and a real coach in your corner." />
-  <meta property="og:image" content="https://thresholdfitness.co.ke/TF_Banner_1600x900_v2.png" />
+  <meta property="og:image" content="https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png" />
   <meta property="og:url" content="https://thresholdfitness.co.ke/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Threshold Fitness — A Plan Built Just For You" />
   <meta name="twitter:description" content="Real 1-on-1 coaching in Nairobi. A personalised plan and a real coach in your corner." />
-  <meta name="twitter:image" content="https://thresholdfitness.co.ke/TF_Banner_1600x900_v2.png" />
+  <meta name="twitter:image" content="https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -177,6 +181,17 @@
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); letter-spacing: 0.02em; color: var(--white); line-height: 1; margin-bottom: 20px; }
     .section-title em { font-style: normal; color: var(--gold); }
     .section-intro { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.7; margin-bottom: 48px; }
+
+    .section-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 22px;
+      padding: 18px 32px; border-bottom: 1px solid var(--border);
+      background: var(--dark);
+    }
+    .section-nav a {
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .section-nav a:hover { color: var(--green-bright); }
 
     /* ── MEET YOUR COACH (one combined card: photo + words in a single frame) ── */
     .coach-section { background: var(--dark); padding: 92px 32px; }
@@ -345,6 +360,7 @@
       nav { padding: 14px 18px; }
       .nav-logo-img { height: 40px; }
       .nav-app { display: none; }
+      .section-nav { gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
       .hero { padding: 120px 20px 56px; }
       .hero-proof { gap: 26px; }
       .section, .included-section, .platform-section { padding: 60px 20px; }
@@ -354,20 +370,158 @@
     }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
+  <link rel="canonical" href="https://thresholdfitness.co.ke/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Threshold Fitness",
+    "legalName": "Threshold Fitness Limited",
+    "url": "https://thresholdfitness.co.ke/",
+    "image": "https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png",
+    "description": "Real 1-on-1 personal training in Nairobi, Kenya. Personalised coaching plans for weight loss, general fitness, kickboxing, and flexibility & mobility.",
+    "telephone": "+254101070390",
+    "email": "ramadhan@thresholdfitness.co.ke",
+    "currenciesAccepted": "KES, USD",
+    "priceRange": "KES 1,800 - KES 2,500 per session",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Nairobi"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Rama",
+      "jobTitle": "Founder & Personal Trainer"
+    },
+    "sameAs": ["https://instagram.com/thresholdfitness"],
+    "makesOffer": [
+      { "@type": "Offer", "name": "3-Session Bundle", "price": "5400", "priceCurrency": "KES" },
+      { "@type": "Offer", "name": "6-Session Bundle", "price": "10260", "priceCurrency": "KES" },
+      { "@type": "Offer", "name": "9-Session Bundle", "price": "14904", "priceCurrency": "KES" },
+      { "@type": "Offer", "name": "12-Session Bundle", "price": "19440", "priceCurrency": "KES" }
+    ],
+    "review": [
+      {
+        "@type": "Review",
+        "reviewBody": "Rama's special exercises target more than one body part at once — it made me better at kickboxing and improved my mobility.",
+        "author": { "@type": "Person", "name": "Priscilla" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "You'll reach your fitness goals with a coach who understands you and is genuinely there for you.",
+        "author": { "@type": "Person", "name": "Assane" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "Coach Rama genuinely cares about seeing you progress. He helped me train for two half marathons and climb Mt. Kenya.",
+        "author": { "@type": "Person", "name": "Morgan" }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a personal trainer cost in Nairobi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sessions start from KES 1,800 on the founding rate, with bundles from KES 5,400 for 3 sessions up to KES 19,440 for 12 sessions (save up to 10%). No hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm a complete beginner — is that okay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — most clients start exactly there. Every plan is built around your current fitness level, not a generic template."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do sessions take place?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wherever suits you — your home, your gym, your estate, or outdoors, in Nairobi, Kenya. No commute needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I train if I have an injury or health condition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tell your coach about it before starting — the plan is built around it. Medical clearance may be requested for significant conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need to cancel or reschedule a session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Message your coach on WhatsApp as early as possible. Reasonable notice is all that's needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer online or remote coaching?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Remote coaching is launching soon for clients anywhere in the world."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with residential gyms or estates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — coaching has been delivered inside residential gyms and estates across Nairobi for years. Property managers interested in bringing coaching to their residents are welcome to reach out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is each session?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sessions run 60 minutes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need equipment?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Equipment needs depend on the client's goal and are worked out before training begins." }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is this for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beginners, people returning after a break, busy professionals, and goal-focused athletes." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- ============================= NAV ============================= -->
   <nav>
+<<<<<<< HEAD
     <!-- Full uploaded logo for the dark header. -->
     <a href="#" class="nav-logo">
       <img src="Threshold_Logo_Full_Transparent_forLight.png" alt="Threshold Fitness Logo" class="nav-logo-img"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
       <span class="nav-logo-text" style="display:none;">THRESHOLD<span>.</span></span>
+=======
+    <!-- LOGO: TF_Logo_Horizontal_Dark.png (horizontal green/gold lockup, transparent, for dark bg).
+         If missing, the "THRESHOLD." text fallback shows automatically. -->
+    <a href="/" class="nav-logo">
+          <span class="nav-logo-text">THRESHOLD<span>.</span></span>
+>>>>>>> 3f35852178a15b7bc8a170baedd545ea979c75d5
     </a>
     <div class="nav-actions">
-      <!-- OPEN APP PLACEHOLDER: change href="#" to the platform URL once it launches. -->
-      <a href="#" class="nav-app">Open App</a>
       <a href="https://wa.me/254101070390?text=Hi%20Rama!%20I%27d%20like%20to%20start%20training%20%E2%80%94%20here%27s%20my%20goal%3A%20" class="nav-cta" target="_blank" rel="noopener">
         <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Message Me
@@ -389,6 +543,7 @@
         </a>
         <a href="#offer" class="btn-ghost">See what I can help with ↓</a>
       </div>
+      <p style="font-size:0.82rem; color:var(--muted); margin-top:14px;">Usually replies within the day — first available slot confirmed by chat.</p>
     </div>
     <div class="hero-proof">
       <div class="proof-stat"><strong>80%</strong><span>Came from a friend</span></div>
@@ -397,6 +552,15 @@
       <div class="proof-stat"><strong>100%</strong><span>Personalised plans</span></div>
     </div>
   </section>
+
+  <nav class="section-nav" aria-label="Page sections">
+    <a href="#coach">Coach</a>
+    <a href="#offer">Services</a>
+    <a href="#how">How It Works</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 
   <!-- ============================= MEET YOUR COACH ============================= -->
   <section class="coach-section" id="coach">
@@ -531,6 +695,7 @@
   <!-- ============================= PLATFORM — COMING SOON (coach network) ============================= -->
   <section class="platform-section" id="platform">
     <span class="platform-badge">Growing soon</span>
+    <span class="platform-badge" style="margin-left:10px;">App launching soon</span>
     <p class="section-label">What's next for Threshold Fitness</p>
     <h2 class="section-title">BUILDING FOR THE <em>FUTURE.</em></h2>
     <p class="platform-lead">Right now, you get me — the founder, coach, and lead trainer behind Threshold Fitness Nairobi. I’m building a stronger foundation for the future, and that includes the possibility of a wider network and a remote offer in due course, but the active service today is still <strong>hands-on personal training in Nairobi</strong>. Remote coaching is being prepared for clients in Kenya, East Africa, and internationally, but it is not available to book yet.</p>
@@ -545,7 +710,12 @@
     </div>
 
     <div class="platform-now">
+<<<<<<< HEAD
       <p><em>For now, I'm your coach — and honestly, that's the whole point.</em> The future may bring a wider system, but the current promise is a real, personal, hands-on coaching experience that is fully grounded in the present.</p>
+=======
+      <p><em>For now, I'm your coach — and honestly, that's the whole point.</em> When the team grows, you'll still get a real person who knows you, every single time.</p>
+      <p style="margin-top:14px;">The Threshold Fitness app is on its way too — book sessions, track your plan, and stay in touch with your coach, all in one place.</p>
+>>>>>>> 3f35852178a15b7bc8a170baedd545ea979c75d5
     </div>
 
     <!-- EMAIL CAPTURE — wired to the "Threshold Fitness — Launch Updates" Google Form.
@@ -615,7 +785,7 @@
 
   <!-- ============================= PRICING (TIER 1 ONLY) ============================= -->
   <!-- Live 1-on-1 coaching with Rama only. Founding rate KES 1,800/session base; bundles 3/6/9/12 with 0/5/8/10% discount ladder (PRICE-008). -->
-  <section class="pricing-section">
+  <section class="pricing-section" id="pricing">
     <div class="pricing-inner">
       <p class="section-label">Simple pricing</p>
       <h2 class="section-title">HONEST RATES. NO SURPRISES.</h2>
@@ -645,6 +815,7 @@
   </section>
 
   <!-- ============================= FAQ ============================= -->
+<<<<<<< HEAD
   <section class="faq-section" id="faq">
     <div class="faq-inner">
       <p class="section-label">Questions people ask</p>
@@ -675,6 +846,52 @@
           <p class="faq-answer">Session length is tailored to your plan and routine, but most personal training sessions are structured to give you efficient, effective progress without wasting time.</p>
         </div>
       </div>
+=======
+  <section class="section" id="faq">
+    <p class="section-label">Questions</p>
+    <h2 class="section-title">GOT <em>QUESTIONS?</em></h2>
+    <div class="cards" style="grid-template-columns: 1fr;">
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">How much does a personal trainer cost in Nairobi?</summary>
+        <p class="card-body" style="margin-top:10px;">Sessions start from KES 1,800 on the founding rate, with bundles from KES 5,400 for 3 sessions up to KES 19,440 for 12 (save up to 10%). No hidden fees.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">I'm a complete beginner — is that okay?</summary>
+        <p class="card-body" style="margin-top:10px;">Yes — most clients start exactly there. Every plan is built around your current fitness level, not a generic template, so we start where you actually are.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Where do sessions take place?</summary>
+        <p class="card-body" style="margin-top:10px;">Wherever suits you — your home, your gym, your estate, or outdoors. I come to you, no commute needed. I'm based in Nairobi, Kenya.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Can I train if I have an injury or health condition?</summary>
+        <p class="card-body" style="margin-top:10px;">Tell me about it when we chat — I'll build the plan around it. For anything significant, I'll ask you to get medical clearance first, just to be safe.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">What if I need to cancel or reschedule a session?</summary>
+        <p class="card-body" style="margin-top:10px;">Just message me on WhatsApp as early as you can. Give me reasonable notice and it's no problem at all.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Do you offer online or remote coaching?</summary>
+        <p class="card-body" style="margin-top:10px;">Remote coaching is launching soon — pop your email in below and I'll let you know the moment it's live.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Do you work with residential gyms or estates?</summary>
+        <p class="card-body" style="margin-top:10px;">Yes — I've been coaching inside residential gyms and estates across Nairobi for years. If you manage a property with a gym and want to talk about bringing real coaching to your residents, message me on WhatsApp.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">How long is each session?</summary>
+        <p class="card-body" style="margin-top:10px;">Sessions run 60 minutes.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Do I need equipment?</summary>
+        <p class="card-body" style="margin-top:10px;">It depends on your goal — we'll figure out what's needed (if anything) when we talk. Some plans use whatever's around you; others call for specific equipment.</p>
+      </details>
+      <details class="card">
+        <summary class="card-title" style="cursor:pointer; list-style:none;">Who is this for?</summary>
+        <p class="card-body" style="margin-top:10px;">Complete beginners, people returning after a break, busy professionals fitting sessions around work, and people training toward a specific goal — the testimonials above span all of that.</p>
+      </details>
+>>>>>>> 3f35852178a15b7bc8a170baedd545ea979c75d5
     </div>
   </section>
 
