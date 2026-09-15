@@ -31,6 +31,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --header-height: 104px;
+      --section-nav-height: 55px;
       /* Brand palette — green + gold on dark. No orange. */
       --green: #55BA4E;          /* brand green (primary) */
       --green-bright: #6BD15F;   /* brighter green for energy / hovers */
@@ -64,6 +66,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
+      min-height: var(--header-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -127,7 +130,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-      padding: 140px 32px 72px; position: relative; overflow: hidden;
+      padding: 210px 32px 72px; position: relative; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
@@ -179,6 +182,12 @@
     .section-intro { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.7; margin-bottom: 48px; }
 
     .section-nav {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      z-index: 99;
+      min-height: var(--section-nav-height);
       display: flex; flex-wrap: wrap; justify-content: center; gap: 22px;
       padding: 18px 32px; border-bottom: 1px solid var(--border);
       background: var(--dark);
@@ -353,11 +362,12 @@
       .coach-photo { max-width: 300px; margin: 0 auto; }
     }
     @media (max-width: 640px) {
+      :root { --header-height: 68px; --section-nav-height: 48px; }
       nav { padding: 14px 18px; }
       .nav-logo-img { height: 40px; }
       .nav-app { display: none; }
       .section-nav { gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
-      .hero { padding: 120px 20px 56px; }
+      .hero { padding: 140px 20px 56px; }
       .hero-proof { gap: 26px; }
       .section, .included-section, .platform-section { padding: 60px 20px; }
       .coach-section, .how-section, .testimonials-section, .pricing-section, .referral-section { padding: 60px 20px; }
@@ -379,7 +389,7 @@
     "telephone": "+254101070390",
     "email": "ramadhan@thresholdfitness.co.ke",
     "currenciesAccepted": "KES, USD",
-    "priceRange": "KES 1,800 - KES 2,500 per session",
+    "priceRange": "From KES 1,800 per session",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nairobi",
@@ -396,10 +406,10 @@
     },
     "sameAs": ["https://instagram.com/thresholdfitness"],
     "makesOffer": [
-      { "@type": "Offer", "name": "3-Session Bundle", "price": "5400", "priceCurrency": "KES" },
-      { "@type": "Offer", "name": "6-Session Bundle", "price": "10260", "priceCurrency": "KES" },
-      { "@type": "Offer", "name": "9-Session Bundle", "price": "14904", "priceCurrency": "KES" },
-      { "@type": "Offer", "name": "12-Session Bundle", "price": "19440", "priceCurrency": "KES" }
+      { "@type": "Offer", "name": "3-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "5400", "priceCurrency": "KES" } },
+      { "@type": "Offer", "name": "6-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "10260", "priceCurrency": "KES" } },
+      { "@type": "Offer", "name": "9-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "14904", "priceCurrency": "KES" } },
+      { "@type": "Offer", "name": "12-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "19440", "priceCurrency": "KES" } }
     ],
     "review": [
       {
@@ -430,7 +440,7 @@
         "name": "How much does a personal trainer cost in Nairobi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessions start from KES 1,800 on the founding rate, with bundles from KES 5,400 for 3 sessions up to KES 19,440 for 12 sessions (save up to 10%). No hidden fees."
+          "text": "Personal training starts from KES 1,800 per session. Published bundle prices start from KES 5,400 for 3 sessions, KES 10,260 for 6, KES 14,904 for 9, and KES 19,440 for 12. Final pricing is confirmed after goals, location, schedule, and any additional requirements are understood."
         }
       },
       {
@@ -768,7 +778,7 @@
   </section>
 
   <!-- ============================= PRICING (TIER 1 ONLY) ============================= -->
-  <!-- Live 1-on-1 coaching with Rama only. Founding rate KES 1,800/session base; bundles 3/6/9/12 with 0/5/8/10% discount ladder (PRICE-008). -->
+  <!-- Live 1-on-1 coaching with Rama only. Published bundle prices are starting prices and may vary by client requirements, location, scheduling, or added services. -->
   <section class="pricing-section" id="pricing">
     <div class="pricing-inner">
       <p class="section-label">Simple pricing</p>
@@ -777,12 +787,12 @@
         <p class="pricing-tag">1-on-1 Live Coaching</p>
         <p class="pricing-name">PERSONAL TRAINING WITH RAMA</p>
         <div class="bundles">
-          <div class="bundle"><p class="bundle-sessions">3</p><p class="bundle-label">Sessions</p><p class="bundle-price">KES 5,400</p></div>
-          <div class="bundle"><p class="bundle-sessions">6</p><p class="bundle-label">Sessions</p><p class="bundle-price">KES 10,260 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 5%</span></p></div>
-          <div class="bundle"><p class="bundle-sessions">9</p><p class="bundle-label">Sessions</p><p class="bundle-price">KES 14,904 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 8%</span></p></div>
-          <div class="bundle"><p class="bundle-sessions">12</p><p class="bundle-label">Sessions</p><p class="bundle-price">KES 19,440 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 10%</span></p></div>
+          <div class="bundle"><p class="bundle-sessions">3</p><p class="bundle-label">Sessions</p><p class="bundle-price">From KES 5,400</p></div>
+          <div class="bundle"><p class="bundle-sessions">6</p><p class="bundle-label">Sessions</p><p class="bundle-price">From KES 10,260 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 5%+</span></p></div>
+          <div class="bundle"><p class="bundle-sessions">9</p><p class="bundle-label">Sessions</p><p class="bundle-price">From KES 14,904 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 8%+</span></p></div>
+          <div class="bundle"><p class="bundle-sessions">12</p><p class="bundle-label">Sessions</p><p class="bundle-price">From KES 19,440 <span style="color:var(--green-bright);font-weight:700;font-size:0.78rem;">save 10%+</span></p></div>
         </div>
-        <p class="pricing-note">Founding rate from KES 1,800/session · bigger bundles save up to 10%</p>
+        <p class="pricing-note">Starting from KES 1,800/session · final pricing is confirmed after we understand your goals, location, schedule, and any additional requirements.</p>
         <ul class="pricing-features">
           <li>A personalised plan, built around your goal</li>
           <li>Session notes &amp; progress tracking every time</li>
