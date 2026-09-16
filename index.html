@@ -31,7 +31,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --header-height: 104px;
+      --header-height: 116px;
       --section-nav-height: 55px;
       /* Brand palette — green + gold on dark. No orange. */
       --green: #55BA4E;          /* brand green (primary) */
@@ -79,7 +79,7 @@
     .nav-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
 
     /* Full logo, sized for the dark header. */
-    .nav-logo-img { height: 72px; width: auto; display: block; max-width: 420px; }
+    .nav-logo-img { height: 84px; width: auto; display: block; max-width: 480px; }
     /* Text fallback — shows ONLY if the logo image fails to load */
     .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.08em; color: var(--white); white-space: nowrap; }
     .nav-logo-text span { color: var(--green); }
@@ -362,9 +362,9 @@
       .coach-photo { max-width: 300px; margin: 0 auto; }
     }
     @media (max-width: 640px) {
-      :root { --header-height: 68px; --section-nav-height: 48px; }
+      :root { --header-height: 74px; --section-nav-height: 48px; }
       nav { padding: 14px 18px; }
-      .nav-logo-img { height: 40px; }
+      .nav-logo-img { height: 46px; }
       .nav-app { display: none; }
       .section-nav { gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
       .hero { padding: 140px 20px 56px; }
