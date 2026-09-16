@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 User-agent: *
 Allow: /
 
 Sitemap: https://thresholdfitness.co.ke/sitemap.xml
-=======
-User-agent: *
-Allow: /
-
-Sitemap: https://thresholdfitness.co.ke/sitemap.xml
->>>>>>> 3f35852178a15b7bc8a170baedd545ea979c75d5
