@@ -383,7 +383,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ExerciseGym",
+    "@type": "LocalBusiness",
     "name": "Threshold Fitness",
     "legalName": "Threshold Fitness Limited",
     "url": "https://thresholdfitness.co.ke/",
@@ -400,37 +400,106 @@
     },
     "areaServed": {
       "@type": "City",
-      "name": "Nairobi"
+      "name": "Nairobi",
+      "country": "Kenya"
     },
     "founder": {
       "@type": "Person",
       "name": "Rama",
       "jobTitle": "Founder & Personal Trainer"
     },
-    "sameAs": ["https://instagram.com/thresholdfitness"],
+    "sameAs": [
+      "https://instagram.com/thresholdfitness",
+      "https://wa.me/254101070390"
+    ],
     "makesOffer": [
-      { "@type": "Offer", "name": "3-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "5400", "priceCurrency": "KES" } },
-      { "@type": "Offer", "name": "6-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "10260", "priceCurrency": "KES" } },
-      { "@type": "Offer", "name": "9-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "14904", "priceCurrency": "KES" } },
-      { "@type": "Offer", "name": "12-Session Bundle", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "19440", "priceCurrency": "KES" } }
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "1-on-1 Personal Training",
+          "description": "Custom fitness coaching plans tailored to your goals, body, and schedule."
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "3-Session Bundle",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "5400",
+          "priceCurrency": "KES"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "6-Session Bundle",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "10260",
+          "priceCurrency": "KES"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "9-Session Bundle",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "14904",
+          "priceCurrency": "KES"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "12-Session Bundle",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "19440",
+          "priceCurrency": "KES"
+        }
+      }
     ],
     "review": [
       {
         "@type": "Review",
-        "reviewBody": "Rama's special exercises target more than one body part at once — it made me better at kickboxing and improved my mobility.",
-        "author": { "@type": "Person", "name": "Priscilla" }
+        "author": {
+          "@type": "Person",
+          "name": "Priscilla"
+        },
+        "reviewBody": "Rama's positivity and good vibes keep me motivated and make all the difference."
       },
       {
         "@type": "Review",
-        "reviewBody": "You'll reach your fitness goals with a coach who understands you and is genuinely there for you.",
-        "author": { "@type": "Person", "name": "Assane" }
+        "author": {
+          "@type": "Person",
+          "name": "Noah"
+        },
+        "reviewBody": "The personal follow-ups kept me on track."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Assane"
+        },
+        "reviewBody": "I trained with Rama for over a year and never got healthier, leaner, or more confident than I did with him."
       },
       {
         "@type": "Review",
         "reviewBody": "Coach Rama genuinely cares about seeing you progress. He helped me train for two half marathons and climb Mt. Kenya.",
-        "author": { "@type": "Person", "name": "Morgan" }
+        "author": {
+          "@type": "Person",
+          "name": "Morgan"
+        }
       }
-    ]
+    ],
+    "knowsAbout": [
+      "Weight loss coaching",
+      "General fitness coaching",
+      "Kickboxing",
+      "Mobility and flexibility",
+      "Personal training"
+    ],
+    "openingHours": "Mo-Su 00:00-23:59"
   }
   </script>
   <script type="application/ld+json">
@@ -443,7 +512,7 @@
         "name": "How much does a personal trainer cost in Nairobi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Personal training starts from KES 1,800 per session. Published bundle prices start from KES 5,400 for 3 sessions, KES 10,260 for 6, KES 14,904 for 9, and KES 19,440 for 12. Final pricing is confirmed after goals, location, schedule, and any additional requirements are understood."
+          "text": "Personal training with Threshold Fitness starts from KES 1,800 per session, with bundle discounts available for 3, 6, 9, and 12-session plans."
         }
       },
       {
@@ -451,7 +520,15 @@
         "name": "I'm a complete beginner — is that okay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — most clients start exactly there. Every plan is built around your current fitness level, not a generic template."
+          "text": "Absolutely. Every plan is built around your current fitness level, your goals, and your schedule, so you can start where you are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is this for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beginners, people returning after a break, busy professionals, and goal-focused athletes."
         }
       },
       {
@@ -459,31 +536,7 @@
         "name": "Where do sessions take place?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessions take place at home, in a residential gym or estate fitness facility without dedicated coaching staff, or outdoors in Nairobi. We do not operate from commercial gyms that require a separate trainer membership."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I train if I have an injury or health condition?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tell your coach about it before starting — the plan is built around it. Medical clearance may be requested for significant conditions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I need to cancel or reschedule a session?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Message your coach on WhatsApp as early as possible. Reasonable notice is all that's needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer online or remote coaching?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Remote coaching is launching soon for clients anywhere in the world."
+          "text": "Sessions take place at home, in a residential gym or estate fitness facility without dedicated coaching staff, or outdoors in Nairobi. We do not operate from commercial gyms that require a separate trainer membership. We use the equipment you already have and can help source what is needed."
         }
       },
       {
@@ -491,23 +544,48 @@
         "name": "Do you work with residential gyms or estates?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — coaching has been delivered inside residential gyms and estates across Nairobi for years. Property managers interested in bringing coaching to their residents are welcome to reach out."
+          "text": "Yes. If your home, estate or residential gym has equipment but no trainer, we come to you and coach you there — we've trained clients inside residential gyms and estates across Nairobi for years. Property managers interested in bringing coaching to their residents are welcome to reach out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a full home gym?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We start with your available workout area and equipment, then build the plan around it. As you progress, we vary the movements and can recommend or help source additional equipment when it would meaningfully support your goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer online or remote coaching?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Remote coaching is coming soon for clients in Kenya, East Africa, and internationally. It is not yet available to book, and our active service remains in-person personal training in Nairobi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I train if I have an injury or health condition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, in many cases. We can adapt the plan to work around injuries or health limitations, and focus on safe progression with the right coaching."
         }
       },
       {
         "@type": "Question",
         "name": "How long is each session?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sessions run 60 minutes." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Session length is tailored to your plan and routine, but most personal training sessions are structured to give you efficient, effective progress without wasting time."
+        }
       },
       {
         "@type": "Question",
-        "name": "Do I need equipment?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Equipment needs depend on the client's goal and are worked out before training begins." }
-      },
-      {
-        "@type": "Question",
-        "name": "Who is this for?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Beginners, people returning after a break, busy professionals, and goal-focused athletes." }
+        "name": "What if I need to cancel or reschedule a session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Message us on WhatsApp at least 45 minutes before the session and we'll move it to another time at no charge. That's how long it can take to travel between sessions, so a cancellation made later than that, or once your coach has arrived, is charged as a full session. If we ever need to postpone because of an emergency, we'll reschedule at a time that suits you."
+        }
       }
     ]
   }
@@ -830,8 +908,16 @@
           <p class="faq-answer">Absolutely. Every plan is built around your current fitness level, your goals, and your schedule, so you can start where you are.</p>
         </div>
         <div class="faq-item">
+          <p class="faq-question">Who is this for?</p>
+          <p class="faq-answer">Beginners, people returning after a break, busy professionals, and goal-focused athletes.</p>
+        </div>
+        <div class="faq-item">
           <p class="faq-question">Where do sessions take place?</p>
           <p class="faq-answer">Sessions take place at home, in a residential gym or estate fitness facility without dedicated coaching staff, or outdoors in Nairobi. We do not operate from commercial gyms that require a separate trainer membership. We use the equipment you already have and can help source what is needed.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">Do you work with residential gyms or estates?</p>
+          <p class="faq-answer">Yes. If your home, estate or residential gym has equipment but no trainer, we come to you and coach you there — we've trained clients inside residential gyms and estates across Nairobi for years. Property managers interested in bringing coaching to their residents are welcome to reach out.</p>
         </div>
         <div class="faq-item">
           <p class="faq-question">Do I need a full home gym?</p>
@@ -848,6 +934,10 @@
         <div class="faq-item">
           <p class="faq-question">How long is each session?</p>
           <p class="faq-answer">Session length is tailored to your plan and routine, but most personal training sessions are structured to give you efficient, effective progress without wasting time.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">What if I need to cancel or reschedule a session?</p>
+          <p class="faq-answer">Message us on WhatsApp at least 45 minutes before the session and we'll move it to another time at no charge. That's how long it can take to travel between sessions, so a cancellation made later than that, or once your coach has arrived, is charged as a full session. If we ever need to postpone because of an emergency, we'll reschedule at a time that suits you.</p>
         </div>
       </div>
     </div>
@@ -895,122 +985,5 @@
     </div>
   </footer>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HealthClub",
-    "name": "Threshold Fitness",
-    "description": "Real 1-on-1 personal training in Nairobi, Kenya for weight loss, general fitness, kickboxing, and flexibility & mobility coaching.",
-    "url": "https://thresholdfitness.co.ke/",
-    "telephone": "+254101070390",
-    "priceRange": "KES 1800+",
-    "areaServed": {
-      "@type": "City",
-      "name": "Nairobi",
-      "country": "Kenya"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nairobi",
-      "addressCountry": "KE"
-    },
-    "sameAs": [
-      "https://instagram.com/thresholdfitness",
-      "https://wa.me/254101070390"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Rama"
-    },
-    "knowsAbout": [
-      "Weight loss coaching",
-      "General fitness coaching",
-      "Kickboxing",
-      "Mobility and flexibility",
-      "Personal training"
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "1-on-1 Personal Training",
-          "description": "Custom fitness coaching plans tailored to your goals, body, and schedule."
-        }
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "8"
-    },
-    "review": [
-      {"@type": "Review", "author": {"@type": "Person", "name": "Priscilla"}, "reviewBody": "Rama's positivity and good vibes keep me motivated and make all the difference."},
-      {"@type": "Review", "author": {"@type": "Person", "name": "Noah"}, "reviewBody": "The personal follow-ups kept me on track."},
-      {"@type": "Review", "author": {"@type": "Person", "name": "Assane"}, "reviewBody": "I trained with Rama for over a year and never got healthier, leaner, or more confident than I did with him."}
-    ],
-    "openingHours": "Mo-Su 00:00-23:59",
-    "image": [
-      "https://thresholdfitness.co.ke/TF_Coach_Cutout.webp"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does a personal trainer cost in Nairobi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Personal training with Threshold Fitness starts from KES 1,800 per session, with bundle discounts available for 3, 6, 9, and 12-session plans."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "I'm a complete beginner — is that okay?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Every plan is built around your current fitness level, your goals, and your schedule, so you can start where you are."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where do sessions take place?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sessions take place at home, in a residential gym or estate fitness facility without dedicated coaching staff, or outdoors in Nairobi. We do not operate from commercial gyms that require a separate trainer membership. We use the equipment you already have and can help source what is needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a full home gym?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We start with your available workout area and equipment, then build the plan around it. As you progress, we vary the movements and can recommend or help source additional equipment when it would meaningfully support your goals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer online or remote coaching?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Remote coaching is coming soon for clients in Kenya, East Africa, and internationally. It is not yet available to book, and our active service remains in-person personal training in Nairobi."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I train if I have an injury or health condition?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, in many cases. We can adapt the plan to work around injuries or health limitations, and focus on safe progression with the right coaching."
-        }
-      }
-    ]
-  }
-  </script>
 </body>
 </html>
