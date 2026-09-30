@@ -18,12 +18,15 @@
   <meta property="og:locale" content="en_KE" />
   <meta property="og:title" content="Threshold Fitness — A Plan Built Just For You" />
   <meta property="og:description" content="Real 1-on-1 coaching in Nairobi. Weight loss, general fitness, kickboxing, flexibility & mobility — a personalised plan and a real coach in your corner." />
-  <meta property="og:image" content="https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png" />
+  <meta property="og:image" content="https://thresholdfitness.co.ke/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Threshold Fitness logo beside coach Rama" />
   <meta property="og:url" content="https://thresholdfitness.co.ke/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Threshold Fitness — A Plan Built Just For You" />
   <meta name="twitter:description" content="Real 1-on-1 coaching in Nairobi. A personalised plan and a real coach in your corner." />
-  <meta name="twitter:image" content="https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png" />
+  <meta name="twitter:image" content="https://thresholdfitness.co.ke/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -211,8 +214,8 @@
 
     /* Figure floats bottom-right; shape-outside wraps the text around Rama's silhouette (magazine style) */
     .coach-card-photo {
-      float: right; shape-outside: url('TF_Transparent_Cutout_v2.png'); shape-margin: 22px;
-      width: 44%; max-width: 460px; display: block;
+      float: right; shape-outside: url('TF_Coach_Cutout.webp'); shape-margin: 22px;
+      width: 44%; max-width: 460px; height: auto; display: block;
       margin: 6px -10px -50px 30px;
     }
 
@@ -366,7 +369,7 @@
       nav { padding: 14px 18px; }
       .nav-logo-img { height: 46px; }
       .nav-app { display: none; }
-      .section-nav { gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
+      .section-nav { flex-wrap: nowrap; gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
       .hero { padding: 140px 20px 56px; }
       .hero-proof { gap: 26px; }
       .section, .included-section, .platform-section { padding: 60px 20px; }
@@ -384,7 +387,7 @@
     "name": "Threshold Fitness",
     "legalName": "Threshold Fitness Limited",
     "url": "https://thresholdfitness.co.ke/",
-    "image": "https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png",
+    "image": "https://thresholdfitness.co.ke/TF_Coach_Cutout.webp",
     "description": "Real 1-on-1 personal training in Nairobi, Kenya. Personalised coaching plans for weight loss, general fitness, kickboxing, and flexibility & mobility.",
     "telephone": "+254101070390",
     "email": "ramadhan@thresholdfitness.co.ke",
@@ -516,7 +519,7 @@
   <nav>
     <!-- Full uploaded logo for the dark header. -->
     <a href="#" class="nav-logo">
-      <img src="Threshold_Logo_Full_Transparent_forLight.png" alt="Threshold Fitness Logo" class="nav-logo-img"
+      <img src="Threshold_Logo_Header.png" alt="Threshold Fitness Logo" class="nav-logo-img"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
       <span class="nav-logo-text" style="display:none;">THRESHOLD<span>.</span></span>
     </a>
@@ -564,12 +567,12 @@
   <!-- ============================= MEET YOUR COACH ============================= -->
   <section class="coach-section" id="coach">
     <div class="coach-inner">
-      <!-- Editorial layout: the figure floats bottom-right and the text wraps around Rama's silhouette (shape-outside). Swap TF_Transparent_Cutout_v2.png to change the photo. -->
+      <!-- Editorial layout: the figure floats bottom-right and the text wraps around Rama's silhouette (shape-outside). Swap TF_Coach_Cutout.webp (web-sized copy of TF_Transparent_Cutout_v2.png) to change the photo. -->
       <div class="coach-card">
         <div class="coach-card-text">
           <p class="section-label">Meet your coach</p>
           <h2 class="section-title">HI, I'M RAMA. 👋</h2>
-          <img class="coach-card-photo" src="TF_Transparent_Cutout_v2.png" alt="Rama — your coach at Threshold Fitness, smiling" />
+          <img class="coach-card-photo" src="TF_Coach_Cutout.webp" width="920" height="1062" loading="lazy" alt="Rama — your coach at Threshold Fitness, smiling" />
           <div class="coach-badge">Hands-on, 1-on-1 coaching</div>
           <div class="coach-bio">
             <p>For over ten years I've helped people right here in Nairobi get stronger, fitter and more confident — and have a good time doing it. Most of my clients found me through a friend, and plenty have trained with me for years — that's the part I'm proudest of.</p>
@@ -948,7 +951,7 @@
     ],
     "openingHours": "Mo-Su 00:00-23:59",
     "image": [
-      "https://thresholdfitness.co.ke/TF_Transparent_Cutout_v2.png"
+      "https://thresholdfitness.co.ke/TF_Coach_Cutout.webp"
     ]
   }
   </script>
