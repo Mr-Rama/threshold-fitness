@@ -36,6 +36,10 @@
     :root {
       --header-height: 116px;
       --section-nav-height: 55px;
+      --portrait-width: clamp(150px, 14vw, 220px);
+      --portrait-edge: clamp(20px, 3vw, 48px);
+      --portrait-gap: 22px;
+      --portrait-gutter: calc(var(--portrait-width) + var(--portrait-edge) + var(--portrait-gap));
       /* Brand palette — green + gold on dark. No orange. */
       --green: #55BA4E;          /* brand green (primary) */
       --green-bright: #6BD15F;   /* brighter green for energy / hovers */
@@ -54,6 +58,9 @@
     }
 
     html { scroll-behavior: smooth; }
+    body > section[id] {
+      scroll-margin-top: calc(var(--header-height) + var(--section-nav-height) + 24px);
+    }
 
     body {
       background: var(--black);
@@ -183,13 +190,13 @@
       linear-gradient(to bottom, rgba(13,15,13,0.3), rgba(13,15,13,0.84)),
       url('close-up-portrait-young-afroamerican-boxer-showing-his-fists.jpg'); }
     .hero-portrait {
-      position: absolute; top: 50%; width: clamp(150px, 14vw, 220px);
+      position: absolute; top: 50%; width: var(--portrait-width);
       height: min(68vh, 620px); overflow: hidden; transform: translateY(-50%);
       border: 1px solid rgba(236,239,236,0.22); border-radius: 20px;
       box-shadow: 0 18px 48px rgba(0,0,0,0.38); opacity: 0.76;
     }
-    .hero-portrait-female { left: clamp(20px, 3vw, 48px); }
-    .hero-portrait-male { right: clamp(20px, 3vw, 48px); }
+    .hero-portrait-female { left: var(--portrait-edge); }
+    .hero-portrait-male { right: var(--portrait-edge); }
     .hero-portrait img {
       display: block; width: 100%; height: 100%; object-fit: cover;
       filter: grayscale(1) contrast(1.05) brightness(0.78);
@@ -347,13 +354,6 @@
     .platform-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(251,187,55,0.5); padding: 7px 14px; border-radius: 999px; margin-bottom: 22px; }
     .platform-lead { font-size: 1.12rem; font-weight: 300; color: var(--text); max-width: 740px; line-height: 1.75; margin-bottom: 44px; }
     .platform-lead strong { color: var(--white); font-weight: 600; }
-    .specialists { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 44px; }
-    .specialist { background: var(--mid); border-radius: 14px; padding: 22px 22px; border-left: 3px solid var(--green); }
-    .specialist-name { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .specialist-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
-    .platform-now { background: linear-gradient(160deg, var(--card), var(--mid)); border: 1px solid var(--border); border-radius: 16px; padding: 30px 28px; margin-bottom: 40px; }
-    .platform-now p { font-size: 1.05rem; color: var(--text); line-height: 1.7; }
-    .platform-now em { font-style: normal; color: var(--gold); font-weight: 600; }
 
     .notify { background: var(--dark); border: 1px solid var(--border); border-radius: 18px; padding: 38px 32px; max-width: 680px; text-align: left; }
     .notify h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 8px; }
@@ -443,7 +443,49 @@
       .cta-section { padding: 64px 20px; }
       footer { padding: 24px 20px; }
     }
-    @media (max-width: 1100px) {
+    @media (min-width: 641px) {
+      body > section:not(.hero), body > footer {
+        width: calc(100% - var(--portrait-gutter) - var(--portrait-gutter));
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(13,15,13,0.88);
+      }
+    }
+    @media (min-width: 641px) and (max-width: 1100px) {
+      :root {
+        --portrait-width: clamp(90px, 13vw, 145px);
+        --portrait-edge: clamp(12px, 2vw, 22px);
+        --portrait-gap: 10px;
+        --portrait-gutter: calc(var(--portrait-width) + var(--portrait-edge) + var(--portrait-gap));
+      }
+      .hero { padding-left: clamp(124px, 18vw, 190px); padding-right: clamp(124px, 18vw, 190px); }
+      .hero-content { max-width: 760px; }
+      .hero-headline { font-size: clamp(2.5rem, 6.3vw, 4.2rem); }
+      .hero-sub { font-size: 1rem; }
+      .hero-portrait {
+        display: block;
+        height: min(58vh, 500px); border-radius: 14px;
+      }
+      .hero-portrait-female { left: var(--portrait-edge); }
+      .hero-portrait-male { right: var(--portrait-edge); }
+      .coach-section, .how-section, .testimonials-section, .pricing-section,
+      .faq-section, .referral-section, .included-section, .platform-section, .section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .offer-grid, .cards {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      }
+      .coach-card-photo {
+        width: 36%;
+        max-width: 180px;
+        margin-right: -6px;
+        margin-left: 20px;
+      }
+      .coach-card-text { padding: 36px 26px; }
+    }
+    @media (max-width: 640px) {
       .hero-portrait { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -849,59 +891,6 @@
     </div>
   </section>
 
-  <!-- ============================= ABOUT THE COMPANY ============================= -->
-  <section class="section" id="about">
-    <p class="section-label">Who we are</p>
-    <h2 class="section-title">A FITNESS COMPANY,<br/>BUILT IN <em>NAIROBI.</em></h2>
-    <p class="about-lead"><strong>Threshold Fitness Limited</strong> is a registered Nairobi fitness company. It started with one proven coach and a simple standard — coaching that genuinely changes what your body can do — and it's growing into a vetted network of specialist coaches serving clients right across East Africa.</p>
-    <p class="about-tagline">Redefining Capabilities.</p>
-    <div class="mv-grid">
-      <div class="mv-card">
-        <h3>Our Mission</h3>
-        <p>To make expert, hands-on fitness coaching accessible across East Africa — pairing people with real coaches and a plan built around their own goals.</p>
-      </div>
-      <div class="mv-card">
-        <h3>Our Vision</h3>
-        <p>To become East Africa's most trusted fitness company — scaling proven, personal coaching far beyond what any single trainer can reach.</p>
-      </div>
-    </div>
-    <div class="about-scope">
-      <span class="scope-chip"><span>Now:</span> Nairobi, Kenya</span>
-      <span class="scope-chip"><span>Next:</span> Tanzania &amp; Uganda</span>
-      <span class="scope-chip"><span>Then:</span> Across East Africa</span>
-    </div>
-  </section>
-
-  <!-- ============================= PLATFORM — COMING SOON (coach network) ============================= -->
-  <section class="platform-section" id="platform">
-    <span class="platform-badge">Growing soon</span>
-    <p class="section-label">What's next for Threshold Fitness</p>
-    <h2 class="section-title">BUILDING FOR THE <em>FUTURE.</em></h2>
-    <p class="platform-lead">Right now, you get me — the founder, coach, and lead trainer behind Threshold Fitness Nairobi. I’m building a stronger foundation for the future, and that includes the possibility of a wider network and a remote offer in due course, but the active service today is still <strong>hands-on personal training in Nairobi</strong>. Remote coaching is being prepared for clients in Kenya, East Africa, and internationally, but it is not available to book yet.</p>
-
-    <div class="specialists">
-      <div class="specialist"><p class="specialist-name">Personal Training</p><p class="specialist-desc">The main live offer today, built around real progress</p></div>
-      <div class="specialist"><p class="specialist-name">Weight Loss Coaching</p><p class="specialist-desc">Sustainable training and habit support</p></div>
-      <div class="specialist"><p class="specialist-name">Kickboxing</p><p class="specialist-desc">Technical striking and conditioning with purpose</p></div>
-      <div class="specialist"><p class="specialist-name">Mobility &amp; Recovery</p><p class="specialist-desc">Move better, feel stronger, and recover smarter</p></div>
-      <div class="specialist"><p class="specialist-name">Remote Coaching</p><p class="specialist-desc">Coming soon for Kenya &amp; East Africa</p></div>
-      <div class="specialist"><p class="specialist-name">Long-term Growth</p><p class="specialist-desc">A stronger system, one step at a time</p></div>
-    </div>
-
-    <div class="platform-now">
-      <p><em>For now, I'm your coach — and honestly, that's the whole point.</em> The future may bring a wider system, but the current promise is a real, personal, hands-on coaching experience that is fully grounded in the present.</p>
-    </div>
-
-    <!-- EMAIL CAPTURE — wired to the "Threshold Fitness — Launch Updates" Google Form.
-         Live link: https://forms.gle/tEyoWQPJAeDEu9ZM8 (signups collect in the form's linked Google Sheet).
-         To change the form later, update the href on the button below. -->
-    <div class="notify">
-      <h3>BE FIRST TO KNOW</h3>
-      <p>Want a shout when remote coaching becomes available? Add your email and you'll be first in line.</p>
-      <a href="https://forms.gle/tEyoWQPJAeDEu9ZM8" class="btn-primary" target="_blank" rel="noopener">Notify me →</a>
-    </div>
-  </section>
-
   <!-- ============================= TESTIMONIALS ============================= -->
   <!-- REAL CLIENT TESTIMONIALS — sourced from the "Threshold Fitness — Client Feedback & Review" Google
        Form responses. Each client explicitly ticked permission to publish (Q14). One respondent (Laur)
@@ -982,10 +971,50 @@
           <li>Equipment supplied if you need it — mats, foam rollers, dumbbells</li>
         </ul>
         <a href="https://wa.me/254101070390?text=Hi%20Rama!%20I%27d%20like%20to%20book%20my%20first%20session." class="btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
-          <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Book your first session
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT THE COMPANY ============================= -->
+  <section class="section" id="about">
+    <p class="section-label">Who we are</p>
+    <h2 class="section-title">A FITNESS COMPANY,<br/>BUILT IN <em>NAIROBI.</em></h2>
+    <p class="about-lead"><strong>Threshold Fitness Limited</strong> is a registered Nairobi fitness company. It started with one proven coach and a simple standard — coaching that genuinely changes what your body can do — and it's growing into a vetted network of specialist coaches serving clients right across East Africa.</p>
+    <p class="about-tagline">Redefining Capabilities.</p>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <h3>Our Mission</h3>
+        <p>To make expert, hands-on fitness coaching accessible across East Africa — pairing people with real coaches and a plan built around their own goals.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our Vision</h3>
+        <p>To become East Africa's most trusted fitness company — scaling proven, personal coaching far beyond what any single trainer can reach.</p>
+      </div>
+    </div>
+    <div class="about-scope">
+      <span class="scope-chip"><span>Now:</span> Nairobi, Kenya</span>
+      <span class="scope-chip"><span>Next:</span> Tanzania &amp; Uganda</span>
+      <span class="scope-chip"><span>Then:</span> Across East Africa</span>
+    </div>
+  </section>
+
+  <!-- ============================= PLATFORM — COMING SOON (coach network) ============================= -->
+  <section class="platform-section" id="platform">
+    <span class="platform-badge">Growing soon</span>
+    <p class="section-label">What's next for Threshold Fitness</p>
+    <h2 class="section-title">BUILDING FOR THE <em>FUTURE.</em></h2>
+    <p class="platform-lead">Our current service is <strong>hands-on personal training in Nairobi</strong>. Remote coaching and a wider coach network are planned, but are not yet available to book.</p>
+
+    <!-- EMAIL CAPTURE — wired to the "Threshold Fitness — Launch Updates" Google Form.
+         Live link: https://forms.gle/tEyoWQPJAeDEu9ZM8 (signups collect in the form's linked Google Sheet).
+         To change the form later, update the href on the button below. -->
+    <div class="notify">
+      <h3>BE FIRST TO KNOW</h3>
+      <p>Interested in remote coaching? Register your interest and we’ll share an update when it becomes available.</p>
+      <a href="https://forms.gle/tEyoWQPJAeDEu9ZM8" class="btn-primary" target="_blank" rel="noopener">Get launch updates →</a>
     </div>
   </section>
 
