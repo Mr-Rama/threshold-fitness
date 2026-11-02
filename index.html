@@ -127,8 +127,37 @@
       position: absolute; inset: 0; z-index: 0;
       background:
         radial-gradient(900px 600px at 80% 12%, rgba(85,186,78,0.22), transparent 60%),
-        radial-gradient(700px 500px at 8% 90%, rgba(251,187,55,0.12), transparent 55%),
-        linear-gradient(to bottom, rgba(13,15,13,0.6), rgba(13,15,13,0.96));
+        radial-gradient(700px 500px at 8% 90%, rgba(251,187,55,0.12), transparent 55%);
+    }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; animation: heroBackgroundFade 24s infinite;
+    }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: -16s; }
+    .hero-slide:nth-child(3) { animation-delay: -8s; }
+    .hero-slide-gym {
+      background-image:
+        linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.48)),
+        linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
+        url('gym-with-motivational-phrase.jpg');
+    }
+    .hero-slide-training {
+      background-image:
+        linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.48)),
+        linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
+        url('empty-space-with-training-equipment-workout-home-nobody-living-room-with-floor-mat-dumbbells-toning-ball-physical-exercise-practice-sport-fitness-gymnastics.jpg');
+    }
+    .hero-slide-mobility {
+      background-image:
+        linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.48)),
+        linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
+        url('still-life-foam-roller.jpg');
+    }
+    @keyframes heroBackgroundFade {
+      0%, 30% { opacity: 1; }
+      38%, 100% { opacity: 0; }
     }
     .hero-content { position: relative; z-index: 2; max-width: 880px; }
 
@@ -338,7 +367,11 @@
       .cta-section { padding: 64px 20px; }
       footer { padding: 24px 20px; }
     }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      .hero-slide { animation: none; }
+      .hero-slide:first-child { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -364,7 +397,11 @@
 
   <!-- ============================= HERO ============================= -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-slide hero-slide-gym"></div>
+      <div class="hero-slide hero-slide-training"></div>
+      <div class="hero-slide hero-slide-mobility"></div>
+    </div>
     <div class="hero-content">
       <span class="hero-eyebrow">Personal Training · Nairobi, Kenya</span>
       <h1 class="hero-headline">LET'S BUILD A PLAN<br/>THAT'S <em>ALL YOURS.</em></h1>
