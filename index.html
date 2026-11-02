@@ -63,6 +63,10 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    body > section, body > footer {
+      position: relative;
+      z-index: 1;
+    }
 
     /* ── NAV ── */
     nav {
@@ -136,7 +140,7 @@
       padding: 210px 32px 72px; position: relative; overflow: hidden;
     }
     .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
       background:
         radial-gradient(900px 600px at 80% 12%, rgba(85,186,78,0.22), transparent 60%),
         radial-gradient(700px 500px at 8% 90%, rgba(251,187,55,0.12), transparent 55%);
@@ -167,11 +171,33 @@
         linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
         url('still-life-foam-roller.jpg');
     }
+    .hero-portrait {
+      position: absolute; top: 50%; width: clamp(150px, 14vw, 220px);
+      height: min(68vh, 620px); overflow: hidden; transform: translateY(-50%);
+      border: 1px solid rgba(236,239,236,0.22); border-radius: 20px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.38); opacity: 0.76;
+    }
+    .hero-portrait-female { left: clamp(20px, 3vw, 48px); }
+    .hero-portrait-male { right: clamp(20px, 3vw, 48px); }
+    .hero-portrait img {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(1) contrast(1.05) brightness(0.78);
+    }
+    .hero-portrait::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(13,15,13,0.06), rgba(13,15,13,0.48)),
+        linear-gradient(135deg, rgba(85,186,78,0.12), transparent 58%);
+    }
     @keyframes heroBackgroundFade {
       0%, 30% { opacity: 1; }
       38%, 100% { opacity: 0; }
     }
     .hero-content { position: relative; z-index: 2; max-width: 880px; }
+    @media (min-width: 1101px) {
+      .hero-content { max-width: 760px; margin: 0 auto; text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions, .hero-proof { justify-content: center; }
+    }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -231,7 +257,7 @@
     .section-nav a:hover { color: var(--green-bright); }
 
     /* ── MEET YOUR COACH (one combined card: photo + words in a single frame) ── */
-    .coach-section { background: var(--dark); padding: 92px 32px; }
+    .coach-section { background: rgba(20,23,20,0.84); padding: 92px 32px; }
     .coach-inner { max-width: 1100px; margin: 0 auto; }
 
     .coach-card {
@@ -296,7 +322,7 @@
     .card-body { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
 
     /* ── HOW IT WORKS ── */
-    .how-section { background: var(--dark); padding: 92px 32px; }
+    .how-section { background: rgba(20,23,20,0.84); padding: 92px 32px; }
     .how-inner { max-width: 1100px; margin: 0 auto; }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 12px; }
     .step { background: var(--mid); border: 1px solid var(--border); border-radius: 16px; padding: 30px 26px; position: relative; }
@@ -323,7 +349,7 @@
     .notify p { font-size: 0.92rem; color: var(--muted); margin-bottom: 22px; }
 
     /* ── TESTIMONIALS ── */
-    .testimonials-section { background: var(--dark); padding: 92px 32px; }
+    .testimonials-section { background: rgba(20,23,20,0.84); padding: 92px 32px; }
     .testimonials-inner { max-width: 1100px; margin: 0 auto; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 12px; }
     .testimonial { background: var(--mid); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; }
@@ -405,6 +431,9 @@
       .coach-section, .how-section, .testimonials-section, .pricing-section, .referral-section { padding: 60px 20px; }
       .cta-section { padding: 64px 20px; }
       footer { padding: 24px 20px; }
+    }
+    @media (max-width: 1100px) {
+      .hero-portrait { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; }
@@ -652,13 +681,20 @@
     </div>
   </nav>
 
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-slide hero-slide-gym"></div>
+    <div class="hero-slide hero-slide-training"></div>
+    <div class="hero-slide hero-slide-mobility"></div>
+    <div class="hero-portrait hero-portrait-female">
+      <img src="Screenshot 2026-11-02 053024.png" alt="" />
+    </div>
+    <div class="hero-portrait hero-portrait-male">
+      <img src="Screenshot 2026-11-02 050616.png" alt="" />
+    </div>
+  </div>
+
   <!-- ============================= HERO ============================= -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-slide hero-slide-gym"></div>
-      <div class="hero-slide hero-slide-training"></div>
-      <div class="hero-slide hero-slide-mobility"></div>
-    </div>
     <div class="hero-content">
       <span class="hero-eyebrow">Personal Training · Nairobi, Kenya</span>
       <h1 class="hero-headline">LET'S BUILD A PLAN<br/>THAT'S <em>ALL YOURS.</em></h1>
