@@ -92,8 +92,7 @@
 
     .nav-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
 
-    /* Full logo, sized for the dark header. */
-    .nav-logo-img { height: 84px; width: auto; display: block; max-width: 480px; }
+    .nav-logo-img { height: 76px; width: 76px; display: block; object-fit: contain; }
     /* Text fallback — shows ONLY if the logo image fails to load */
     .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.08em; color: var(--white); white-space: nowrap; }
     .nav-logo-text span { color: var(--green); }
@@ -433,7 +432,7 @@
     @media (max-width: 640px) {
       :root { --header-height: 74px; --section-nav-height: 48px; }
       nav { padding: 14px 18px; }
-      .nav-logo-img { height: 46px; }
+      .nav-logo-img { height: 52px; width: 52px; }
       .nav-app { display: none; }
       .section-nav { flex-wrap: nowrap; gap: 14px; padding: 14px 18px; font-size: 0.7rem; overflow-x: auto; white-space: nowrap; justify-content: flex-start; }
       .hero { padding: 140px 20px 56px; }
@@ -722,7 +721,7 @@
   <nav>
     <!-- Full uploaded logo for the dark header. -->
     <a href="#" class="nav-logo">
-      <img src="Threshold_Logo_Header.png" alt="Threshold Fitness Logo" class="nav-logo-img"
+      <img src="Threshold_AppIcon_Transparent_1024.png" alt="Threshold Fitness logo" class="nav-logo-img"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
       <span class="nav-logo-text" style="display:none;">THRESHOLD<span>.</span></span>
     </a>
