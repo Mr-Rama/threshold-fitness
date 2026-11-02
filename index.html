@@ -148,17 +148,24 @@
     .hero-slide {
       position: absolute; inset: 0;
       background-size: cover; background-position: center;
-      opacity: 0; animation: heroBackgroundFade 24s infinite;
+      opacity: 0; animation: heroBackgroundFade 32s infinite;
     }
-    .hero-slide:nth-child(1) { animation-delay: 0s; }
-    .hero-slide:nth-child(2) { animation-delay: -16s; }
-    .hero-slide:nth-child(3) { animation-delay: -8s; }
-    .hero-slide-gym {
+    .hero-slide-boxing-woman { animation-delay: 0s; }
+    .hero-slide-training { animation-delay: -8s; }
+    .hero-slide-mobility { animation-delay: -16s; }
+    .hero-slide-boxing-man { animation-delay: -24s; }
+    .hero-slide-boxing-woman,
+    .hero-slide-training,
+    .hero-slide-mobility,
+    .hero-slide-boxing-man {
       background-image:
-        linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.48)),
-        linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
-        url('gym-with-motivational-phrase.jpg');
+        linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.55)),
+        linear-gradient(to bottom, rgba(13,15,13,0.3), rgba(13,15,13,0.84));
     }
+    .hero-slide-boxing-woman { background-image:
+      linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.55)),
+      linear-gradient(to bottom, rgba(13,15,13,0.3), rgba(13,15,13,0.84)),
+      url('sideways-athletic-woman-training-boxing-center.jpg'); }
     .hero-slide-training {
       background-image:
         linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.48)),
@@ -171,6 +178,10 @@
         linear-gradient(to bottom, rgba(13,15,13,0.35), rgba(13,15,13,0.86)),
         url('still-life-foam-roller.jpg');
     }
+    .hero-slide-boxing-man { background-image:
+      linear-gradient(90deg, rgba(13,15,13,0.88), rgba(13,15,13,0.55)),
+      linear-gradient(to bottom, rgba(13,15,13,0.3), rgba(13,15,13,0.84)),
+      url('close-up-portrait-young-afroamerican-boxer-showing-his-fists.jpg'); }
     .hero-portrait {
       position: absolute; top: 50%; width: clamp(150px, 14vw, 220px);
       height: min(68vh, 620px); overflow: hidden; transform: translateY(-50%);
@@ -189,8 +200,8 @@
         linear-gradient(135deg, rgba(85,186,78,0.12), transparent 58%);
     }
     @keyframes heroBackgroundFade {
-      0%, 30% { opacity: 1; }
-      38%, 100% { opacity: 0; }
+      0%, 15% { opacity: 1; }
+      20%, 100% { opacity: 0; }
     }
     .hero-content { position: relative; z-index: 2; max-width: 880px; }
     @media (min-width: 1101px) {
@@ -682,14 +693,15 @@
   </nav>
 
   <div class="hero-bg" aria-hidden="true">
-    <div class="hero-slide hero-slide-gym"></div>
+    <div class="hero-slide hero-slide-boxing-woman"></div>
     <div class="hero-slide hero-slide-training"></div>
     <div class="hero-slide hero-slide-mobility"></div>
+    <div class="hero-slide hero-slide-boxing-man"></div>
     <div class="hero-portrait hero-portrait-female">
       <img src="Screenshot 2026-11-02 053024.png" alt="" />
     </div>
     <div class="hero-portrait hero-portrait-male">
-      <img src="Screenshot 2026-11-02 050616.png" alt="" />
+      <img src="smiling-young-african-sports-man-holding-mobile-phone.jpg" alt="" />
     </div>
   </div>
 
