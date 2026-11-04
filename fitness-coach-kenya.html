@@ -11,6 +11,15 @@
   <meta property="og:description" content="Personal fitness coaching in Kenya for strength, weight loss, mobility, and sustainable progress." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thresholdfitness.co.ke/fitness-coach-kenya.html" />
+  <meta property="og:image" content="https://thresholdfitness.co.ke/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Threshold Fitness logo beside coach Rama" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fitness Coach in Kenya | Threshold Fitness" />
+  <meta name="twitter:description" content="Personal fitness coaching in Kenya for strength, weight loss, mobility, and sustainable progress." />
+  <meta name="twitter:image" content="https://thresholdfitness.co.ke/og-image.jpg" />
+  <link rel="icon" type="image/png" href="Threshold_AppIcon_Transparent_1024.png" />
   <style>
     body { font-family: Arial, sans-serif; background: #0d0f0d; color: #ecefec; margin: 0; line-height: 1.7; }
     a { color: #6bd15f; }
@@ -25,9 +34,66 @@
     h2 { font-size: 1.8rem; }
     ul { padding-left: 18px; }
     .home { margin-top: 28px; display: inline-block; color: #fbbb37; }
+
+    .site-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #2c322c; background: #0d0f0d; }
+    .site-head .logo img { height: 56px; width: auto; display: block; }
+    .site-head nav { display: flex; align-items: center; gap: 18px; font-size: 0.85rem; font-weight: 600; }
+    .site-head nav a { color: #b9c1b8; text-decoration: none; }
+    .site-head nav a:hover { color: #6bd15f; }
+    .site-head nav .head-cta { background: linear-gradient(135deg, #6bd15f, #3f9a3a); color: #fff; padding: 10px 16px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; }
+    .wa-icon { width: 16px; height: 16px; fill: currentColor; }
+    .start { margin-top: 48px; background: #161a16; border: 1px solid #2c322c; border-radius: 16px; padding: 28px 24px; }
+    .start h2 { margin-top: 0; }
+    .start ul { list-style: none; padding: 0; margin: 0 0 22px; }
+    .start li { padding: 8px 0; border-bottom: 1px solid #2c322c; }
+    .start li:last-child { border-bottom: none; }
+    .start strong { color: #fff; }
+    .start .links { margin-top: 16px; font-size: 0.95rem; }
+    .site-foot { border-top: 1px solid #2c322c; padding: 24px 20px; font-size: 0.85rem; color: #9aa39a; }
+    .site-foot .inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between; }
+    .site-foot nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    .site-foot a { text-decoration: none; }
+    @media (max-width: 640px) {
+      .site-head .logo img { height: 44px; }
+      .site-head nav .hide-sm { display: none; }
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Fitness Coach in Kenya",
+    "serviceType": "Fitness Coaching",
+    "url": "https://thresholdfitness.co.ke/fitness-coach-kenya.html",
+    "areaServed": {
+      "@type": "City",
+      "name": "Nairobi"
+    },
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://thresholdfitness.co.ke/#business",
+      "name": "Threshold Fitness",
+      "url": "https://thresholdfitness.co.ke/",
+      "telephone": "+254101070390"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "1800",
+      "priceCurrency": "KES",
+      "description": "Single session, health assessment included. Bundles of 3, 6, 9 and 12 sessions save up to 10%."
+    }
+  }
+  </script>
 </head>
 <body>
+  <header class="site-head">
+    <a class="logo" href="index.html"><img src="Threshold_Logo_Header.png" alt="Threshold Fitness" width="360" height="267" style="width:auto;" /></a>
+    <nav>
+      <a class="hide-sm" href="index.html#pricing">Pricing</a>
+      <a class="hide-sm" href="index.html#faq">FAQ</a>
+      <a class="head-cta" href="https://wa.me/254101070390?text=Hi%20Rama!%20I%27d%20like%20to%20hire%20a%20fitness%20coach%20in%20Kenya." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.02c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.97-.31-1.66-.61-2.92-1.26-4.83-4.2-4.97-4.39-.15-.2-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.7.8 1.99.95.29.15.49.22.56.34.07.12.07.7-.17 1.37z"/></svg> Message</a>
+    </nav>
+  </header>
   <div class="wrap">
     <div class="top">
       <span class="tag">Kenya</span>
@@ -64,7 +130,24 @@
       </ul>
     </section>
 
+    <section class="start">
+      <h2>Getting started</h2>
+      <ul>
+        <li><strong>Start with a single session — KES 1,800</strong>, health assessment included. Move to a bundle when you're ready and save up to 10%.</li>
+        <li><strong>We come to you</strong> — your home, estate or residential gym, or outdoors in Nairobi.</li>
+        <li><strong>Training hours:</strong> Mon–Fri 5:30am – 7:30pm, Sat 7am – 12 noon, Sundays by arrangement. Message any time for a quick reply.</li>
+      </ul>
+      <a class="cta" href="https://wa.me/254101070390?text=Hi%20Rama!%20I%27d%20like%20to%20hire%20a%20fitness%20coach%20in%20Kenya." target="_blank" rel="noopener">Book your first session</a>
+      <p class="links"><a href="index.html#pricing">See bundle pricing</a> · <a href="index.html#faq">Read the FAQ</a> · <a href="index.html#testimonials">Client reviews</a></p>
+    </section>
+
     <a class="home" href="index.html">← Return to Threshold Fitness</a>
   </div>
+  <footer class="site-foot">
+    <div class="inner">
+      <span>Threshold Fitness · Nairobi, Kenya</span>
+      <nav><a href="personal-training-nairobi.html">Personal Training</a> <a href="weight-loss-coach-nairobi.html">Weight Loss</a> <a href="kickboxing-classes-nairobi.html">Kickboxing</a> <a href="https://instagram.com/thresholdfitness" target="_blank" rel="noopener">Instagram</a></nav>
+    </div>
+  </footer>
 </body>
 </html>
